@@ -1,0 +1,6 @@
+.pixels {
+  display: inline-block;
+  padding: 8px;
+  margin-bottom: 8px;
+  background: #333;
+}
