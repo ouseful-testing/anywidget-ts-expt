@@ -6,6 +6,8 @@ See [`NOTES.md`](./NOTES.md) for a walkthrough on creating `anywidget` widgets t
 
 ![Example widget panel and magic](images/example.png)
 
+![Example widget panel and magic, annotated](images/example-annotated.png)
+
 Example:
 
 ```python
