@@ -40,3 +40,8 @@ void loop() {
   i = (i + 1) % sizeof(leds);
 }
 ```
+
+## Original Code
+
+- `avr8js`: Copyright (C) 2019-2023 Uri Shaked, MIT License, https://github.com/wokwi/avr8js
+- `anywidget`: Copyright (c) 2022-2024 Trevor Manz, MIT License, https://github.com/manzt/anywidget
