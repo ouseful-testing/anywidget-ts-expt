@@ -6,8 +6,6 @@ Code is sent from a magicked cell to an isolated ipywidget running (via [`jupyte
 
 See [`NOTES.md`](./NOTES.md) for a walkthrough on creating `anywidget` widgets to create an `ipywidget` wrapper around a simple Typescript application (`avr8js`).
 
-![Example widget panel and magic](images/example.png)
-
 ![Example widget panel and magic, annotated](images/example-annotated.png)
 
 Example:
