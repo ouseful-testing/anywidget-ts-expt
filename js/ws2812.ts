@@ -1,3 +1,15 @@
+/* 
+Code via:
+
+https://github.com/wokwi/avr8js
+https://stackblitz.com/edit/avr8js-6leds?file=index.ts
+https://stackblitz.com/edit/avr8js-ws2812?file=index.ts
+https://stackblitz.com/edit/avr8js-eeprom-localstorage?file=eeprom-localstorage-backend.ts
+
+MIT License.
+
+Original repo: Copyright (C) 2019-2023 Uri Shaked
+*/ 
 import { PinState } from "avr8js";
 
 const ZERO_HIGH = 400; // ±150ns
