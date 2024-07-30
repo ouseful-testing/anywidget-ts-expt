@@ -9,8 +9,7 @@ import { generateUUID } from "./uuid";
 
 //import "https://esm.sh/@wokwi/elements";
 
-/* SAMPLE CODE
-const BLINK_CODE = `
+const SAMPLE_CODE = `
 // LEDs connected to pins 8..13
 
 byte leds[] = {13, 12, 11, 10, 9, 8};
@@ -27,7 +26,7 @@ void loop() {
   digitalWrite(leds[i], LOW);
   i = (i + 1) % sizeof(leds);
 }`.trim();
-*/
+
 
 /* Specifies attributes defined with traitlets in ../src/anywidget_ts_expt/__init__.py */
 interface WidgetModel {
@@ -36,6 +35,9 @@ interface WidgetModel {
 }
 
 function render({ model, el }: RenderContext<WidgetModel>) {
+  model.set("sample", SAMPLE_CODE);
+  model.save_changes();
+  
   let el2 = document.createElement("div");
   el2.innerHTML = html;
   const uuid = generateUUID();

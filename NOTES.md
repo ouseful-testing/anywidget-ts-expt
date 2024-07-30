@@ -151,6 +151,13 @@ function render({ model, el }: RenderContext<WidgetModel>) {
 export default { render };
 ```
 
+We can set model state in the `render()` function as follows:
+
+```typescript
+  model.set("sample", SAMPLE_CODE);
+  model.save_changes();
+```
+
 The `model` then provides access to shared state elements:
 
 ```typescript
@@ -273,7 +280,18 @@ from anywidget_ts_expt import widget_panel
 mywidget = widget_panel()
 ```
 
+Panels and arguments available:
+
+- `from anywidget_ts_expt import fleds_panel, switchleds_panel,matrix_panel`
+- `widget_ = leds_panel()`
+- `widget_ =switchleds_panel("example panel title)`
+- `widget_ =matrix_panel(None, "split-right")`
+
+View sample code: `widget_.sample`
+
 For example, install the package from the repo, load in the packages, create a widget in its own panel, run the magicked cell to get the code into the widget, click the run button to execute the code in the widget.
+
+
 
 ```python
 %pip install https://github.com/ouseful-testing/anywidget-ts-expt/raw/main/dist/anywidget_ts_expt-0.0.1-py2.py3-none-any.whl

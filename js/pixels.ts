@@ -11,9 +11,7 @@ import "./pixels.css";
 type NeopixelMatrixHTMLElement = NeopixelMatrixElement & HTMLElement;
 type CpuNanosFunction = () => number;
 
-/* SAMPLE CODE
-
-const BLINK_CODE = `
+const SAMPLE_CODE = `
 #include "FastLED.h"
 
 // Matrix size
@@ -49,7 +47,6 @@ void loop() {
   counter++;
 }
 `.trim();
-*/
 
 /* Specifies attributes defined with traitlets in ../src/anywidget_ts_expt/__init__.py */
 interface WidgetModel {
@@ -58,6 +55,9 @@ interface WidgetModel {
 }
 
 function render({ model, el }: RenderContext<WidgetModel>) {
+  model.set("sample", SAMPLE_CODE);
+  model.save_changes();
+  
   let el2 = document.createElement("div");
   el2.innerHTML = html;
   const uuid = generateUUID();

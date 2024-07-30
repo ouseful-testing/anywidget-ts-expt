@@ -22,7 +22,7 @@ leds_widget = leds_panel()
 ```
 
 ```python
-%%leds_magic leds_widget
+%%arduino_magic leds_widget
 // LEDs connected to pins 8..13
 
 byte leds[] = {13, 12, 11, 10, 9, 8};
@@ -40,6 +40,15 @@ void loop() {
   i = (i + 1) % sizeof(leds);
 }
 ```
+
+Panels and arguments available:
+
+- `from anywidget_ts_expt import fleds_panel, switchleds_panel,matrix_panel`
+- `widget_ = leds_panel()`
+- `widget_ =switchleds_panel("example panel title)`
+- `widget_ =matrix_panel(None, "split-right")`
+
+View sample code: `widget_.sample`
 
 ## Original Code
 

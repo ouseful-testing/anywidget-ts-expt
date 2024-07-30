@@ -7,9 +7,7 @@ import { AVRRunner } from "./execute";
 import { formatTime } from "./format-time";
 import { generateUUID } from "./uuid";
 
-/* SAMPLE CODE
-const BLINK_CODE = `
-
+const SAMPLE_CODE = `
 #define LED_PIN 13
 #define BUTTON_PIN 12
 void setup() {
@@ -24,15 +22,18 @@ void loop() {
     digitalWrite(LED_PIN, LOW);
   }
 }`.trim();
-*/
 
 /* Specifies attributes defined with traitlets in ../src/anywidget_ts_expt/__init__.py */
 interface WidgetModel {
   code_content: string;
   code_hex: string;
+  sample: string;
 }
 
 function render({ model, el }: RenderContext<WidgetModel>) {
+  model.set("sample", SAMPLE_CODE);
+  model.save_changes();
+  
   let el2 = document.createElement("div");
   el2.innerHTML = html;
   const uuid = generateUUID();
@@ -40,7 +41,7 @@ function render({ model, el }: RenderContext<WidgetModel>) {
   // Maybe via the WidgetModel ?
   el2.id = uuid;
   el.appendChild(el2);
-  
+
   const statusLabel = el.querySelector('div[title="status-label"]');
   statusLabel.textContent = "WAITING FOR BITS...";
 
