@@ -84,13 +84,21 @@ def create_panel(widget_class):
     def wrapper(title=None, anchor="split-bottom"):
         if title is None:
             title = f"{widget_class.__name__[:-6]} Output"  # Assuming widget classes end with 'Widget'
-        sc = Sidecar(title=title, anchor=anchor)
 
         widget_ = widget_class()
-        with sc:
+        widget_.sc = Sidecar(title=title, anchor=anchor)
+
+        with widget_.sc:
             display(widget_)
 
+        # Add a close method to the widget
+        def close():
+            widget_.sc.close()
+
+        widget_.close = close
+
         return widget_
+        # We can then close the panel as sc.
 
     return wrapper
 

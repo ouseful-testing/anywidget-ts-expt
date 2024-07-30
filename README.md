@@ -50,6 +50,8 @@ Panels and arguments available:
 
 View sample code: `widget_.sample`
 
+Close the widget panel: `widget_.close()`
+
 ## Original Code
 
 - `avr8js`: Copyright (C) 2019-2023 Uri Shaked, MIT License, https://github.com/wokwi/avr8js

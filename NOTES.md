@@ -289,9 +289,9 @@ Panels and arguments available:
 
 View sample code: `widget_.sample`
 
+Close the widget panel: `widget_.close()`
+
 For example, install the package from the repo, load in the packages, create a widget in its own panel, run the magicked cell to get the code into the widget, click the run button to execute the code in the widget.
-
-
 
 ```python
 %pip install https://github.com/ouseful-testing/anywidget-ts-expt/raw/main/dist/anywidget_ts_expt-0.0.1-py2.py3-none-any.whl
